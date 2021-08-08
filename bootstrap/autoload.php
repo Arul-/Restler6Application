@@ -12,6 +12,7 @@ define('APP_START', microtime(true));
 | loading of any our classes "manually". Feels great to relax.
 |
 */
+require __DIR__.'/helpers.php';
 define('BASE', dirname(__DIR__));
 
 require BASE . '/vendor/autoload.php';
