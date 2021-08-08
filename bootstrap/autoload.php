@@ -12,7 +12,7 @@ define('APP_START', microtime(true));
 | loading of any our classes "manually". Feels great to relax.
 |
 */
-require __DIR__.'/helpers.php';
+require __DIR__ . '/helpers.php';
 define('BASE', dirname(__DIR__));
 
 require BASE . '/vendor/autoload.php';
@@ -30,9 +30,11 @@ use Illuminate\Queue\Capsule\Manager as Queue;
 use Illuminate\Support\Facades\Facade;
 use Luracast\Restler\Defaults;
 use Luracast\Restler\Format\HtmlFormat;
+use Luracast\Restler\MediaTypes\Html;
 use Luracast\Restler\Scope;
 use Luracast\Restler\UI\Bootstrap3Form;
 use Luracast\Restler\UI\Forms;
+use Luracast\Restler\UI\FormStyles;
 
 
 $app = new Application();
@@ -214,14 +216,9 @@ spl_autoload_register(
 |--------------------------------------------------------------------------
 */
 
-//$app['config']['app.aliases'] += Scope::$classAliases + ['Scope' => 'Luracast\Restler\Scope'];
-//
-//Defaults::$cacheDirectory = $app['config']['cache.path'];
-//HtmlFormat::$viewPath = $app['path'] . '/views';
-//HtmlFormat::$cacheDirectory = $app['path.storage'] . '/views';
-//
-//HtmlFormat::$template = 'blade';
-////Forms::$style = FormStyles::$bootstrap3; // for v4 and below
-//Forms::setStyles(new Bootstrap3Form); // for v5
-//
-//include BASE . '/routes/api.php';
+Defaults::$cacheDirectory = $app['config']['cache.path'];
+Html::$viewPath = $app['path'] . '/views';
+Html::$cacheDirectory = $app['path.storage'] . '/views';
+Html::$template = 'blade';
+Forms::$style = FormStyles::$bootstrap4;
+include BASE . '/routes/api.php';
