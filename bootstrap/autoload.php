@@ -221,4 +221,5 @@ Html::$viewPath = $app['path'] . '/views';
 Html::$cacheDirectory = $app['path.storage'] . '/views';
 Html::$template = 'blade';
 Forms::$style = FormStyles::$bootstrap4;
+$app['config']['app.aliases'] += Defaults::$aliases;
 include BASE . '/routes/api.php';

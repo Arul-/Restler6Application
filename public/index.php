@@ -18,9 +18,6 @@
 |
 */
 
-use App\Http\Controllers\Home;
-use App\Http\Controllers\Reviews;
-use Luracast\Restler\Explorer\v2\Explorer;
 use Luracast\Restler\Restler;
 
 require __DIR__ . '/../bootstrap/autoload.php';
@@ -49,6 +46,5 @@ require __DIR__ . '/../bootstrap/autoload.php';
 | request and response
 |
 */
-// $r = new Restler();
-// $r->addAPIClass('YourClassNameHere');
-// $r->handle();
+$r = new Restler();
+$r->handle();
