@@ -98,7 +98,9 @@ class ControllerMakeCommand extends GeneratorCommand
         $replace["use {$controllerNamespace}\Controller;\n"] = '';
 
         return str_replace(
-            array_keys($replace), array_values($replace), parent::buildClass($name)
+            array_keys($replace),
+            array_values($replace),
+            parent::buildClass($name)
         );
     }
 
@@ -149,7 +151,7 @@ class ControllerMakeCommand extends GeneratorCommand
         $model = trim(str_replace('/', '\\', $model), '\\');
 
         if (!Str::startsWith($model, $rootNamespace = $this->laravel->getNamespace())) {
-            $model = $rootNamespace . 'Models\\'. $model;
+            $model = $rootNamespace . 'Models\\' . $model;
         }
 
         return $model;
