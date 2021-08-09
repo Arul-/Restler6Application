@@ -17,13 +17,13 @@
   ],
   "require": {
     "php": "^7.4|^8",
-    "arul/reactphp-restler": "dev-dev",
     "illuminate/cache": "^8",
     "illuminate/database": "^8",
     "illuminate/events": "^8",
     "illuminate/filesystem": "^8",
     "illuminate/pagination": "^8",
     "league/flysystem": "^1.0",
+    "luracast/restler": "v6.x-dev",
     "psy/psysh": "^0.10.4",
     "symfony/process": "^5",
     "vlucas/phpdotenv": "^5"
