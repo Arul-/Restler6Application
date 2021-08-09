@@ -7,9 +7,7 @@ Api server boilerplate with database support for a newer version of [Luracast Re
 
 Restler is an "API First Micro Framework" that offers better web api by design.
 
-Every branch in this git repository contains different application templates to suit your specific needs.
-
-Provides full laravel 8 database functionality for your non laravel projects adds 
+This template provides full laravel 8 database functionality for your non laravel projects adds 
 Migration, Seeding and Artisan support to Illuminate Database.
 
 It enables **artisan** command line tool with:
@@ -80,8 +78,7 @@ open terminal inside this newly created folder
 
 This will install all the dependencies
 
-What's in it?
--------------
+## What's in it?
 
 Eloquent Application Template offers lluminate Database support along with Migration, Seeding and Artisan.
 
@@ -100,30 +97,33 @@ for the `/`(root) of the API.
 ```
 
 On your development machine, you can run the development server by
-running the `php artisan serve` on the project root. This will run the php development server at
-port 8000 on localhost by default. If you need to change that you may use the command line
-options as shown below
+running the 
+
+    php artisan serve
+
+on the project root. This will run the php development server at port 8000 on localhost by default. 
+If you need to change that you may use the command line options as shown below
 
     php artisan serve --port=8080
 
-This project also comes with swagger ui for testing and documenting the api. You can access that
+This project also comes with API Explorer based on swagger ui for testing and documenting the api. You can access that
 using the following url
 
 http://localhost:8000/explorer/
 
 ![Explorer Default-App](https://raw.githubusercontent.com/Arul-/Restler6Application/gh-pages/default-app.png)
 
-#### How it works?
+## How it works?
 
 `index.php` in the public folder includes the `autoload.php` in `bootstrap` folder which internally
-uses composer autoloader. This enables lazy loading for all db related classes. Only when you call
-one of the DB related class, database engine is initialized.
+uses composer autoloader. This enables lazy loading for all db and laravel related classes. Only when you call
+one of the DB related class, database engine is initialized. So we get a very performant application.
 
-#### More Documentation
+### More Documentation
 
 Refer to all database related sections on [Laravel 8 website](https://laravel.com/docs/8.x).
 
-#### What to do next?
+### What to do next?
 
 This app uses sqlite database by default. So make sure the file exists
 by running the following command in the terminal
@@ -213,14 +213,14 @@ Controller created successfully.
 ```
 
 We basically created a `Reviews` controller class in `app/Http/Controllers/Reviews.php` along with a model class in
-`app/Model/Review.php`
+`app/Models/Review.php`
 
 Take a look at those files to understand what they do
 
 ```php
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -244,8 +244,7 @@ use Illuminate\Database\Eloquent\Model;
 As you can see the model class has `@property` comments that links it to
 the database table structure we created earlier with a migration
 
-Lets add this new controller class and remove Home in
-`/routes/api.php`
+Let's add this new controller class and comment out Home in `/routes/api.php`
 
 ```php
 <?php
@@ -302,7 +301,7 @@ Now we have pagination support as shown below
 
 ![Explorer Reviews_Expanded Paginatopm](https://raw.githubusercontent.com/Arul-/Restler6Application/gh-pages/review-listing-pagination.png)
 
-Using the POST method we could add a review to get the following response:
+Paginated response for the GET request looks something like this:
 ```json
 {
   "current_page": 1,
@@ -344,13 +343,13 @@ Using the POST method we could add a review to get the following response:
   "to": 1,
   "total": 1
 }
-
 ```
 
 
-#### Production Mode
+## Production Mode
 
-Make sure all the folders inside `storage/framework/cache` have write permission for the application to write the needed files for caching
+Make sure all the folders inside `storage/framework/cache` have written permission for the application to 
+write the needed files for caching
 
 Create `.env` by cloning `.env.example`
 
@@ -362,6 +361,8 @@ and update the environment as follows
 
 You may also update the database configuration inside the `.env` file
 
-Now Restler should be running in production mode and laravel related components are running under production environment!
+Now Restler should be running in production mode and laravel related components are running under 
+production environment!
 
-> **Note:-** when running in production mode restler won't detect addition or removal of an api. You need to manually delete the cache files under `storage/framework/cache`
+> **Note:-** when running in production mode restler won't detect addition or removal of an api. 
+> You need to manually delete the cache files under `storage/framework/cache`
