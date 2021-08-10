@@ -1,4 +1,4 @@
-![Restler 6](https://github.com/Luracast/Restler/raw/master/public/examples/resources/restler.svg)
+![Restler 6](https://raw.githubusercontent.com/Arul-/Restler6Application/gh-pages/Restler6.svg)
 
 Restler 6 Application with laravel components
 =============================================
