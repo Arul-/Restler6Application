@@ -28,7 +28,7 @@ class {{ class }}
     public function index(int $page = 1, int $per_page = 15): PaginatedResponse
     {
         return PaginatedResponse::fromSerializable(
-            Review::paginate(
+            {{ model }}::paginate(
                 $per_page,
                 ['*'],
                 'page',
