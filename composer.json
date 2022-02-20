@@ -26,10 +26,12 @@
     "luracast/restler": "v6.x-dev",
     "psy/psysh": "^0.10.4",
     "symfony/process": "^5",
-    "vlucas/phpdotenv": "^5"
+    "vlucas/phpdotenv": "^5",
+    "ext-json": "*"
   },
   "require-dev": {
     "doctrine/dbal": "~2.10",
+    "fakerphp/faker": "^1.19",
     "illuminate/console": "^8",
     "illuminate/view": "^8",
     "laravel/helpers": "^1"
