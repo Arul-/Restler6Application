@@ -17,24 +17,24 @@
   ],
   "require": {
     "php": "^7.4|^8",
-    "illuminate/cache": "^8",
-    "illuminate/database": "^8",
-    "illuminate/events": "^8",
-    "illuminate/filesystem": "^8",
-    "illuminate/pagination": "^8",
-    "league/flysystem": "^1.0",
+    "illuminate/cache": "^9",
+    "illuminate/database": "^9",
+    "illuminate/events": "^9",
+    "illuminate/filesystem": "^9",
+    "illuminate/pagination": "^9",
+    "league/flysystem": "@stable",
     "luracast/restler": "v6.x-dev",
-    "psy/psysh": "^0.10.4",
-    "symfony/process": "^5",
-    "vlucas/phpdotenv": "^5",
+    "psy/psysh": "@stable",
+    "symfony/process": "@stable",
+    "vlucas/phpdotenv": "@stable",
     "ext-json": "*"
   },
   "require-dev": {
-    "doctrine/dbal": "~2.10",
-    "fakerphp/faker": "^1.19",
-    "illuminate/console": "^8",
-    "illuminate/view": "^8",
-    "laravel/helpers": "^1"
+    "doctrine/dbal": "@stable",
+    "fakerphp/faker": "@stable",
+    "illuminate/console": "^9",
+    "illuminate/view": "^9",
+    "laravel/helpers": "@stable"
   },
   "suggest": {
     "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
@@ -46,7 +46,7 @@
       "App\\": "app/",
       "Bootstrap\\": "bootstrap/",
       "Database\\Factories\\": "database/factories/",
-      "Database\\Seeders\\": "database/seeders/"
+      "Database\\Seeders\\": "database/seeds/"
     }
   },
   "minimum-stability": "dev",

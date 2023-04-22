@@ -121,7 +121,7 @@ one of the DB related class, database engine is initialized. So we get a very pe
 
 ### More Documentation
 
-Refer to all database related sections on [Laravel 8 website](https://laravel.com/docs/8.x).
+Refer to all database related sections on [Laravel 9 website](https://laravel.com/docs/9.x).
 
 ### What to do next?
 
@@ -155,7 +155,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -182,7 +182,7 @@ class CreateReviewsTable extends Migration
     {
         Schema::dropIfExists('reviews');
     }
-}
+};
 
 ```
 

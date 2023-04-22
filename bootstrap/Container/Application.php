@@ -91,6 +91,9 @@ class Application extends Container implements ApplicationContract
         $this->instance('path.database', $this->databasePath());
         $this->instance('path.resources', $this->resourcePath());
         $this->instance('path.bootstrap', $this->bootstrapPath());
+        $this->bind('db.schema', function ($app) {
+            return $app['db']->connection()->getSchemaBuilder();
+        });
         //$this->registerErrorHandling();
     }
 
@@ -137,11 +140,11 @@ class Application extends Container implements ApplicationContract
     /**
      * Get the storage path for the application.
      *
-     * @param string|null $path
+     * @param string $path
      *
      * @return string
      */
-    public function storagePath(string $path = null): string
+    public function storagePath($path = '')
     {
         return $this->storagePath ?: $this->basePath . DIRECTORY_SEPARATOR . 'storage';
     }
@@ -623,5 +626,15 @@ class Application extends Container implements ApplicationContract
         foreach ($this->terminatingCallbacks as $terminating) {
             $this->call($terminating);
         }
+    }
+
+    public function maintenanceMode()
+    {
+        return null;
+    }
+
+    public function terminating($callback): ApplicationContract|static
+    {
+       return $this;
     }
 }
